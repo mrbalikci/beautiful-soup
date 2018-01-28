@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Surfing</title>
+  <title>Mars Mission</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -13,19 +13,52 @@
   <div clas="container">
     <div class="jumbotron text-center">
       <h1>Mission to Mars </h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Mars Reports</a></p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Mars Reports</a>
+      </p>
     </div>
-      
-    <!-- surf data -->
+
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <img src= {{ mars.src }} width: 50% />
+
         <h3>NASA Mars Report</h3>
+
+        <h1>{{ mars.news_title }}</h1>
+
         <p>{{ mars.report }}</p>
-      </div>
-    </div>
-  </div>
+
+
+        <hr>
+
+        <h1>The Featured Image</h1>
+        <img src='{{ mars.src }}' width: 50%/>
+
+        <hr>
+        <h2>Mars Weather</h2>
+        <p>{{ mars.weather}}</p>
+        <hr>
+
+        <div class="col-md-12">
+          <div class="row">
+            <h3 class="heading">Mars Facts</h3>
+            <div>
+              <p> {{ mars.facts }} </p>
+            </div>
+
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>Images</h2>
+
+        <h2>Cerberus</h2>
+        <img src= '{{ mars.images[0] }}'  width: 50% />
+
+        <h2>schiaparelli</h2>
+        <img src= {{ mars.images[1] }} width: 50% />
+        
 
 </body>
-</html>
 
+</html>
